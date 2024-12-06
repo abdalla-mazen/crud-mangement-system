@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRRUD SYSTEM</title>
+  <link rel="icon" href="#">
+  <link rel="stylesheet" href="style/all.min.css">
+  <link rel="stylesheet" href="style/bootstrap.min.css" />
+</head>
+
+<body>
+  <section>
+    <div class="container bg-body-tertiary rounded shadow-lg text-center my-2">
+      <div class="row ">
+        <div class="col-md-12">
+          <h1>CRUD SYSTEM</h1>
+          <div class="form-floating mb-3">
+            <input  type="text" class="form-control" oninput="validateName()" id="productName" placeholder="" />
+            <label for="productName">Product Name</label>
+            <p id="msgName" class="alert alert-danger d-none my-3">Enter Name Product</p>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" oninput="validatePrice()" id="productPrice" placeholder="" />
+            <label for="productPrice">Product Price</label>
+            <p  id="msgPrice" class="alert alert-danger d-none my-3">Enter Price Number Only</p>
+          </div>
+          <div class="form-floating mb-3">
+            <input list="Category" type="text" class="form-control" oninput="validateCategory()" id="productCategory" placeholder="" />
+            <label for="productCategory">Product Category</label>
+            <p  id="msgCategory" class="alert alert-danger d-none my-3">Enter Category From List</p>
+            <datalist id="Category">
+              <option value="Tv" >
+              <option value="Mobile" >
+              <option value="Screen" >
+            </datalist>
+          </div>
+
+          <div class="form-floating ">
+            <textarea class="form-control" placeholder="" id="productDescription" oninput="validateDescription()"></textarea>
+            <label for="productDescription">productDescription</label>
+            <p id="msgDescription" class="alert alert-danger d-none my-3">Enter Product Description</p>
+          </div>
+          <div class="mb-3">
+            <label for="productFile" class="form-label"></label>
+            <input class="form-control productFile" type="file" id="productFile"  >
+          </div>
+        </div>
+        <div>
+          <button id="add" onclick="addProduct()" class="btn btn-primary d-flex mb-3 align-items-center">ADD PRODUCT <i class="fa-solid fa-circle-plus ms-2"></i></button>
+          <button id="update" onclick="UpdateValue()" class="btn btn-warning d-flex mb-3 align-items-center d-none">UPDATE PRODUCT <i class="fa-solid fa-pen-to-square"></i></button>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <div class="form-floating mb-3 w-50 m-auto my-5 ">
+    <input type="search" class="form-control " id="searchInput" placeholder="" oninput="searchItem()">
+    <label for="searchInput">Search By Name</label>
+  </div>
+  <section>
+    <div class="container py-5">
+      <div class="row row-gap-3" id="rowData">
+       
+      </div>
+    </div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
